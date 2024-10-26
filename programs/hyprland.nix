@@ -1,6 +1,8 @@
 {
   wayland.windowManager.hyprland = {
     enable = true;
+	xwayland.enable = true;
+
     settings = {
       ## Variables
       "$mod" = "SUPER";
@@ -14,7 +16,7 @@
       # Move and resize windows with the mouse
       bindm = [
         "$mod, mouse:272, movewindow"
-	"$mod, mouse:273, resizewindow"
+        "$mod, mouse:273, resizewindow"
       ];
 
       ## Debug

@@ -70,13 +70,13 @@
     git
 	clang # C compiler
 	rustup
+	ripgrep # needed for vim grep
   ];
   programs.fish.enable = true;
 
   # Hyprland package
   programs.hyprland = {
     enable = true;
-    package = inputs.hyprland.packages."${pkgs.system}".hyprland;
   };
 
   home-manager = {
