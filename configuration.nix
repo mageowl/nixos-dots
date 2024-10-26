@@ -68,6 +68,8 @@
     # CLI Utilities
     wget
     git
+	clang # C compiler
+	rustup
   ];
   programs.fish.enable = true;
 
