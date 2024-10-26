@@ -24,6 +24,7 @@
   home.packages = with pkgs; [
     # Applications
     kitty # terminal
+    firefox
 
     # CLI Helpers
     neovim

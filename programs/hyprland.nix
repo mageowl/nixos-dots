@@ -7,7 +7,7 @@
 
       ## Keybinds
       bind = [
-        "$mod, Enter, exec, kitty"
+        "$mod, Enter, exec, firefox"
         "$mod, Return, exit"
         "$mod, Q, killactive"
       ];
