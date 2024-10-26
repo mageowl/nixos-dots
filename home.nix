@@ -23,7 +23,7 @@
 	# environment.
 	home.packages = with pkgs; [
 		# Applications
-		kitty firefox
+		kitty firefox obs-studio
 
 		# CLI Helpers
 		neovim gh
