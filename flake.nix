@@ -3,6 +3,12 @@
 
 	inputs = {
 		nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+		hyprland = {
+			type = "git";
+			url = "https://github.com/hyprwm/Hyprland";
+			inputs.aquamarine.url = "github:hyprwm/aquamarine";
+			submodules = true;
+		};
 
 		home-manager = {
 			url = "github:nix-community/home-manager";

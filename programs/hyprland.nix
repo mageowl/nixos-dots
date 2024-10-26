@@ -1,28 +1,42 @@
+
+{ inputs, pkgs, ... }:
 {
-  wayland.windowManager.hyprland = {
-    enable = true;
-	xwayland.enable = true;
+	imports = [
+		inputs.hyprland.homeManagerModules.default
+	];
 
-    settings = {
-      ## Variables
-      "$mod" = "SUPER";
+	home.packages = with pkgs; [
+		wayland
+		glib
+	];
 
-      ## Keybinds
-      bind = [
-        "$mod, Enter, exec, kitty"
-        "$mod, Return, exit"
-        "$mod, Q, killactive"
-      ];
-      # Move and resize windows with the mouse
-      bindm = [
-        "$mod, mouse:272, movewindow"
-        "$mod, mouse:273, resizewindow"
-      ];
+	wayland.windowManager.hyprland = {
+		enable = true;
+		xwayland.enable = true;
+		systemd.enable = true;
+		settings = {
+			## MONITORS
+			monitor = ",preferred,auto,auto";
 
-      ## Debug
-      debug = {
-        disable_logs = false;
-      };
-    };
-  };
+			## PROGRAMS
+			"$terminal" = "kitty";
+
+			## KEYBINDS
+			"$mod" = "SUPER";
+			bind = [
+				"$mod, Return, exec, $terminal"
+				"$mod, Escape, exit"
+				"$mod, Q, killactive"
+			];
+			# Move and resize windows with the mouse
+			bindm = [
+				"$mod, mouse:272, movewindow"
+				"$mod, mouse:273, resizewindow"
+			];
+
+			debug = {
+				disable_logs = false;
+			};
+		};
+	};
 }
